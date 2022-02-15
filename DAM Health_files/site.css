@@ -1,0 +1,895 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+@font-face {
+    font-family: 'Oakes Grotesk';
+    src: url('../fonts/Oakes.ttf');
+}
+
+html, body {
+    font-family: 'Oakes Grotesk','Helvetica Neue', Helvetica, Arial, sans-serif;     
+    height:100%;
+    overflow:hidden;
+}
+body {
+   /* min-height: -webkit-fill-available;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;*/
+}
+html {
+    overflow: hidden;
+    /*height: -webkit-fill-available;*/
+}
+a, .btn-link {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+app {
+    position: relative;
+    display: flex;
+    flex-direction: column;    
+}
+
+.top-row {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    flex: 1;
+}
+
+    .main .top-row {
+        /*background-color: #f7f7f7;*/
+        background-color: #025E69;
+        border-bottom: 1px solid #d6d5d5;
+        align-items: center;
+        flex-direction: column-reverse;
+        /*justify-content: flex-end;*/
+    }
+
+        .main .top-row > a, .main .top-row .btn-link {
+            white-space: nowrap;
+            margin-left: 1.5rem;
+        }
+
+        .main .top-row a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+.sidebar {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+    .sidebar .top-row {
+        /*background-color: rgba(0,0,0,0.4);*/
+        background-color: white;
+    }
+
+.navbar-brand {
+    font-size: 1.1rem;
+    height: 40px;
+    width: 100px;
+}
+
+.sidebar .oi {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.sidebar .nav-item {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .sidebar .nav-item:first-of-type {
+        padding-top: 1rem;
+    }
+
+    .sidebar .nav-item:last-of-type {
+        padding-bottom: 1rem;
+    }
+
+    .sidebar .nav-item a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+        .sidebar .nav-item a.active {
+            background-color: rgba(255,255,255,0.25);
+            color: white;
+        }
+
+        .sidebar .nav-item a:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+        }
+
+.content {
+    padding-top: 1.1rem;
+}
+
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+#blazor-error-ui {
+    background: #025E69 !important;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    color: #fff;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+        color: #fff;
+    }
+
+.appbarcontent {
+    /*margin-left: 20%;*/
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*flex-direction:row;*/
+}
+
+.appbardata {
+    margin-left: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .main .top-row:not(.auth) {
+        display: none;
+    }
+
+    .main .top-row.auth {
+        justify-content: space-between;
+    }
+
+    .main .top-row a, .main .top-row .btn-link {
+        margin-left: 0;
+    }
+
+    .mud-appbar {
+        height: 100px;
+    }
+    .mainlayoutpadding {
+        height: 100vh;
+        padding-top: 100px !important;
+        font-family: Oakes Grotesk;
+        overflow: hidden;
+        height: -webkit-fill-available;
+        overflow-y: auto;
+        height: fit-content;
+        min-height: 80vh;
+        max-height: 100vh;
+    }
+    
+    .appbarcontent {
+        margin-left: 10%;
+        /*margin:auto;*/
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /*height: 80px;*/
+    }
+
+    .appbardata {
+        display: flex;
+        margin-left: 10px;
+        align-items: center;
+        justify-content: flex-start;
+        align-self: flex-start;
+    }
+
+    .smallscreenmargin {
+        margin-top: 40px;
+    }
+
+    .mud-dialog {
+        min-width: 80% !important;
+        max-width: 95% !important;
+        max-height: 90vh !important;
+        overflow-y: scroll;
+    }
+   
+    ::-webkit-scrollbar {
+        width: 0px !important; /* Remove scrollbar space */
+        /* Optional: just make scrollbar invisible */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: transparent !important;
+    }
+    html, body {
+        overflow: auto;
+    }
+    .bookingform {
+        height: 100vh;
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden
+    }
+}
+
+@media (min-width: 768px) {
+    app {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .main .top-row {
+        position: sticky;
+        top: 0;
+    }
+
+    .main > div {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+    .sidebar .collapse {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+
+    .mud-dialog {
+        min-width: 60% ;     
+        max-width: 90% !important;
+    }
+        .mud-dialog ::-webkit-scrollbar {
+            width: 7px !important;
+            height: 5px !important;
+          
+        }
+    
+        ::-webkit-scrollbar {
+            width: 7px !important;
+            height: 5px !important;
+            /* Remove scrollbar space */
+            /* Optional: just make scrollbar invisible */
+        }
+    /* Optional: show position indicator in red */
+    ::-webkit-scrollbar-thumb {
+        background: gray !important;
+    }
+    
+}
+.mud-dialog-title{
+    height: 40px;
+}
+.mud-dialog-actions {
+    height: 90px;
+}
+.sk-double-bounce .sk-child {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #025E69 !important;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-doubleBounce 2s infinite ease-in-out;
+    animation: sk-doubleBounce 2s infinite ease-in-out;
+}
+
+
+
+.tabcolor {
+    color: #F77F89;
+}
+
+
+.cardoverflow{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+}
+
+
+    .spanoverflow {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 180px;
+    }
+.drawerdetails {
+    display: flex;
+    -webkit-box-align: start;
+    align-items: flex-start;
+}
+
+.CharacterContainer {
+    text-align: center;
+    font-size: 1em;
+    line-height: 3em;
+    background-color: transparent;
+    color: #025E69 !important;
+    flex-direction: row;
+    display: flex;
+}
+
+.CharacterElement {
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    zoom:1.3;
+}
+
+.Inactive {
+    color: #F77F89;
+    cursor: pointer;
+    font-size: 1em;
+    zoom: normal;
+}
+
+.AppElement {
+    font-size: 1em;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 5em;
+    background-color: white;
+}
+
+/*the below needs to checked on mudblazor and radzen package updates*/
+.mud-typography, .mud-input-control, .mud-button, .mud-input-label, .mud-shrink {
+    font-family: 'Oakes Grotesk' !important;
+}
+
+.rz-button.btn-primary {
+    /*background-color: rgba(0,0,0, 0.12) !important;*/
+    border: none !important;
+    background-color: inherit !important;
+    color: #000000 !important;
+    margin-bottom: -2px !important;
+    margin-top:4px;
+    width: 50px !important;
+    margin-left: 50%;
+    font-weight: 400;    
+}
+
+.rz-button.btn-secondary {
+    /*background-color: #025E69 !important;*/
+    border: none !important;
+    background-color: inherit !important;
+    color: #025E69 !important;
+    margin-bottom: -4px !important;
+    width: 50px !important;
+    font-weight: 600;    
+}
+    .rz-button.btn-secondary:hover, .rz-button.btn-primary:hover {
+        background: #eee;
+    }
+
+
+.mud-table-root .mud-table-head .mud-table-cell {
+    color: #025E69 !important;
+    font-weight: 700 !important;
+    line-height: 1.5rem;
+   
+}
+
+.mud-nav-link.active .mud-nav-link-text {
+    font-weight: 900 !important;
+    font-size: 16px;
+    margin-top: 5px !important;
+}
+
+.mud-table-root .mud-icon-root.mud-svg-icon, .mud-nav-link.active .mud-icon-root.mud-svg-icon, .mud-list-item .mud-icon-root.mud-svg-icon {
+    color: #025E69 !important;
+    fill: currentColor !important;
+}
+.mud-button-icon-end  .mud-icon-root.mud-svg-icon, .mud-nav-link.active .mud-icon-root.mud-svg-icon {
+    color: inherit !important;
+    fill: currentColor !important;
+}
+    .rz-event .rz-event-content {
+    /*width: auto !important;*/
+   /* background-color: #F77F89 !important;*/
+   background-color:transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+ 
+    .rz-scheduler-nav-prev-next .rz-button {
+        background-color: #025E69 !important;
+    }
+.rz-scheduler-nav-views .rz-state-active {
+    background-color: #025E69 !important;
+}
+.rz-scheduler  {
+   /*min-height:500px !important;*/
+}
+.rz-dialog-wrapper{
+    z-index:99999 !important;
+}
+/*.rz-event, .rz-slot, .rz-slot-minor, .rz-slot-hours .rz-slot-header {
+    height: 1.7em !important;
+}*/
+div.mud-input-slot {
+    white-space: pre;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.rz-colorpicker {
+    margin-top: 3px;
+    width: 100% !important;
+    height: 87.5%;
+}
+.my-reconnect-modal > div {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999999 !important;
+    overflow: hidden;
+    background-color: #fff;
+    opacity: 0.8;
+    text-align: center;
+    font-weight: bold;
+    color: #025E69;
+}
+
+.components-reconnect-hide > div {
+    display: none;
+}
+
+.components-reconnect-show > div {
+    display: none;
+}
+
+.components-reconnect-show > .show {
+    display: block;
+}
+
+.components-reconnect-failed > div {
+    display: none;
+}
+
+.components-reconnect-failed > .failed {
+    display: block;
+}
+
+.components-reconnect-refused > div {
+    display: none;
+}
+
+.components-reconnect-refused > .refused {
+    display: block;
+}
+.draggable {
+    
+    border: 1px solid #424d5c;
+    cursor: pointer;
+    background: #5c6b7f;
+    color: #ffffff;
+    border-radius: 5px;
+    
+}
+
+    .draggable:active {
+        cursor: grabbing;
+    }
+
+.dragging {
+    cursor: grabbing;
+}
+.eventdivpastdate {
+    position:relative;
+    border-radius: 1px;
+    border-color: transparent;
+    /*margin-top: 3px;*/
+    cursor: pointer;
+    height:19px;
+    margin:3px 2px 0px 2px;
+    /*width:90px;*/
+}
+    .eventdivpastdate .arrived {
+        position: absolute;
+        height: 19px;
+        width: 3%;
+        margin: 0px 0px 0px 0px;
+        background: #ffb84e;
+        left: 0px;
+    }
+    .eventdivpastdate .departed {
+        position: absolute;
+        height: 19px;
+        width: 3%;
+        margin: 0px 0px 0px 0px;
+        background: #fff;
+        left: 0px;
+    }
+    .eventdivpastdate .dna {
+        position: absolute;
+        height: 19px;
+        width: 3%;
+        margin: 0px 0px 0px 0px;
+        background: #F44336;
+        left: 0px;
+    }
+.eventdiv {
+    /*padding: -1px 3px -1px 3px;*/
+    /*height: 1.5em;*/
+    position:relative;
+    height: 19px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-radius: 1px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    margin: 0px 2px 0px 2px;
+}
+    .eventdiv .arrived {
+        position: absolute;
+        height: 19px;
+        width: 3%;
+        margin: 0px 0px 0px 0px;
+        background: #ffb84e;
+        left: 0px;
+    }
+
+    .eventdiv .departed {
+        position: absolute;
+        height: 19px;
+        width: 3%;
+        margin: 0px 0px 0px 0px;
+        background: #fff;
+        left: 0px;
+    }
+    .eventdiv .dna {
+        position: absolute;
+        height: 19px;
+        width: 3%;
+        margin: 0px 0px 0px 0px;
+        background: #F44336;
+        left: 0px;
+    }
+    .eventtext {
+    width: 100%;
+    /*height: 1.3em;*/        
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    background-color: transparent;
+    font-size: small;
+    font-family: 'Oakes Grotesk';
+    
+}
+.fullwidth {
+    min-width:80vw !important;
+    
+    
+}
+    .fullwidth > .mud-dialog {
+        box-sizing: border-box;
+        min-width: 90vw;
+    }
+.calendarheader {
+    color: #025E69;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis !important;    
+}
+
+::deep .mud-table {
+    height: 100% !important;
+}
+.mud-table ::-webkit-scrollbar {
+    width: 7px !important;
+    height: 5px !important;
+}
+
+.scroll-container {
+    padding-bottom: 0px;
+}
+    .scroll-container, .scroll-container .mud-table {
+        height: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+.scroll-grid-container {
+    height: calc(100% - 136px);    
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 50px;
+}
+.scroll-layout-container {
+    height: calc(100% - 86px);      
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom:50px;
+}
+
+.mud-table-cell {        
+    white-space:nowrap;
+}
+
+/*24jan*/
+.mainlayoutpadding {
+    /*height: 100vh;*/
+    height: fit-content;
+    min-height: 70vh;
+    max-height: 100vh;
+
+    padding-top: 64px;
+    font-family: Oakes Grotesk;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*height: -webkit-fill-available;*/
+}
+/*.calendarcontainer, .mainlayoutpadding {
+    overflow-y: auto;
+}*/
+.calendarcontainer {
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    width: 99%;
+    margin-right: 10px;    
+}
+.calendarview {
+    height: calc(100vh - 140px);
+    overflow: auto;
+    padding-bottom: 10px;    
+}
+.bookingform {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden
+}
+.bookingchild {
+   /* height: calc(100% - 6px);*/
+    overflow-x: hidden;
+    /*overflow-y: auto;*/
+    padding-bottom: 0px;
+}
+@media(max-width:1024px){
+    .calendarview {
+        /*width: 100vw;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: calc(100vh - 140px);*/
+        padding-bottom: 10px;        
+        min-height: -webkit-fill-available;
+    }
+    .mainlayoutpadding {
+        padding-top: 85px !important;
+        overflow-y: auto;
+        height: fit-content;
+        min-height: 70vh;
+        /* height: -webkit-fill-available; */
+
+        max-height: 100vh;
+    }
+   
+    ::-webkit-scrollbar {
+        width: 0px !important; /* Remove scrollbar space */
+        /* Optional: just make scrollbar invisible */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: transparent !important;
+    }
+}
+
+
+
+.slotcontainer {
+    /*max-height:80vh; jk*/    
+    overflow: auto;
+    padding: 4px;
+}
+
+ /*24jan*/
+@media (min-width: 1200px) {
+    .detailswidth
+
+{
+    width: 30%;
+}
+
+}
+
+ 
+@media (min-width: 1200px) {
+    .slotwidth
+
+{
+    width: 70%;
+    height: auto;
+}
+
+}
+
+
+
+@media (min-width: 768px) {
+    .detailswidth {
+        width: 40%;
+    }
+
+    .slotwidth {
+        width: 60%;
+        /*height:90vh;  jk*/
+        height: auto;
+    }
+
+    .pagecontainer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .slotspage {
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;        
+        
+    }
+
+    .chipbadge {
+        width: 20px !important;
+        height: 20px !important;
+        margin-left: 12px;
+        vertical-align: text-top;
+    }
+}
+
+@media (max-width: 768px) {
+    .detailswidth {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+
+    .slotwidth {
+        width: 100% !important;
+        margin: auto;
+    }
+
+    .pagecontainer {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .slotspage {
+        width: 100%;
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .slotcontainer {
+        overflow: auto;
+        padding: 4px;
+    }
+
+    .chipbadge {
+        width: 16px !important;
+        height: 16px !important;
+        right: -10px;
+        vertical-align: text-top;
+    }
+
+}
+
+.overFlowHidden{
+    overflow: hidden !important;
+}
+
+.paddingBottomCustome {
+    padding-bottom: 180px !important
+}
+
+
+
+.overFlowHidden {
+    overflow: hidden;
+}
+
+.overFlowHidden {
+    overflow: hidden !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .slotcontainer {
+        max-height: max-content;
+        overflow: hidden;
+    }
+}
+
+.timercss{
+    width:100%;
+    padding:7px;
+    background-color:white;
+    position:fixed;
+    top:60px;
+    left:0px;
+    z-index:99
+}
+
+@media (max-width: 599.99px) {
+    .mud-main-content {
+        padding-top: var(--mud-appbar-height);
+    }
+}
+@media (max-width: 600px) {
+
+    .mainlayoutpadding {
+        padding-top: 100px !important;
+        overflow-y: auto;
+        height: fit-content;
+        min-height: 70vh;
+        /* height: -webkit-fill-available; */
+
+        max-height: 100vh;
+    }
+}
+
+
+    /* .scroll-container .mud-table ::-webkit-scrollbar {
+        width: 7px !important;
+        height: 5px !important;
+    }*/
